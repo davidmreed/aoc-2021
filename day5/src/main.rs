@@ -91,7 +91,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut coords = HashMap::new();
 
     let lines = many1(terminated(line, line_ending))(include_str!("input.txt"))?.1;
-    println!("I have {} lines", lines.len());
     for l in lines {
         l.plot(&mut coords);
         if l.straight() {
